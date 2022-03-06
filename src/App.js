@@ -33,18 +33,34 @@ function App() {
             alt=''
             className='w-16'
           />
+          <h2 className='text-3xl'>{result.main.temp}°F</h2>
           <h2 className='text-center capitalize'>
             {result.weather[0].description}
           </h2>
-          <div className='flex flex-col'>
-            <div>
-              High/Low: {Math.round(result.main.temp_max)}/
-              {Math.round(result.main.temp_min)}°F
+          <div className='flex space-x-5'>
+            <div className='flex flex-col'>
+              <div className='py-3 border-b-2 border-white border-dashed'>
+                High/Low: {Math.round(result.main.temp_max)}/
+                {Math.round(result.main.temp_min)}°F
+              </div>
+              <div className='py-3 border-b-2 border-white border-dashed'>
+                Humidity: {result.main.humidity}
+              </div>
+              <div className='py-3 border-b-2 border-white border-dashed'>
+                Pressure: {result.main.pressure}h/pa
+              </div>
             </div>
-            <div>
-              Humidity: {result.main.humidity}
+            <div className='flex flex-col'>
+              <div className='py-3 border-b-2 border-white border-dashed'>
+                Visibility: {result.visibility / 1000}km
+              </div>
+              <div className='py-3 border-b-2 border-white border-dashed'>
+                Wind speed: {result.wind.speed}m/s
+              </div>
+              <div className='py-3 border-b-2 border-white border-dashed'>
+                Wind Direction: {result.wind.deg}°
+              </div>
             </div>
-            <div>Pressure: {result.main.pressure}h/pa</div>
           </div>
         </div>
       )}
