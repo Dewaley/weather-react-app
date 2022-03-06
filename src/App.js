@@ -23,7 +23,7 @@ function App() {
   return (
     <div className='flex items-center max-h-screen h-screen w-screen max-w-screen overflow-hidden bg-sky-900 flex-col bg-weather bg-center bg-cover bg-no-repeat'>
       <Input query={query} setQuery={setQuery} search={search} />
-      {!isLoading && (
+      {!isLoading && result.name !== undefined && (
         <div className='text-white flex flex-col items-center'>
           <h1 className='text-4xl my-4 text-center'>
             {result.name}, {result.sys.country}
@@ -63,6 +63,9 @@ function App() {
             </div>
           </div>
         </div>
+      )}
+      {!isLoading && result.name === undefined && (
+        <div className='text-3xl text-white'>Location not found</div>
       )}
     </div>
   );
