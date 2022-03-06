@@ -25,7 +25,7 @@ function App() {
       <Input query={query} setQuery={setQuery} search={search} />
       {!isLoading && (
         <div className='text-white flex flex-col items-center'>
-          <h1 className='text-6xl my-4'>
+          <h1 className='text-4xl my-4 text-center'>
             {result.name}, {result.sys.country}
           </h1>
           <img
