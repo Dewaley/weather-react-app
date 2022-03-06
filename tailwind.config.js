@@ -140,6 +140,7 @@ module.exports = {
       'gradient-to-l': 'linear-gradient(to left, var(--tw-gradient-stops))',
       'gradient-to-tl':
         'linear-gradient(to top left, var(--tw-gradient-stops))',
+      weather: 'url(/src/images/thunderstorm-gdd4676800_1280.jpg)',
     },
     backgroundOpacity: ({ theme }) => theme('opacity'),
     backgroundPosition: {
