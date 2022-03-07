@@ -5,17 +5,16 @@ function App() {
   const [query, setQuery] = useState('');
   const [result, setResult] = useState({});
   const [isLoading, setIsLoading] = useState(true);
+  const key = 'bd9ce425aa545bbb06b29e8abcd77fa6';
+  const url = 'https://api.openweathermap.org/data/2.5/';
   const search = async (e) => {
     setIsLoading(true);
     e.preventDefault();
-    const key = 'bd9ce425aa545bbb06b29e8abcd77fa6';
-    const url = 'https://api.openweathermap.org/data/2.5/';
     const res = await fetch(
       `${url}weather?q=${query}&appid=${key}&units=imperial`
     );
     const response = await res.json();
     setResult(response);
-    console.log(response);
     setQuery('');
     setIsLoading(false);
   };
